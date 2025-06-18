@@ -1,151 +1,57 @@
-# 🐶 WebAR Puppy Experience
+# 🐶 WebAR Puppy
 
-**[👉 Try WebAR Puppy Live Demo](https://reliable-melba-93be87.netlify.app/)**
+**[👉 Try it now!](https://reliable-melba-93be87.netlify.app/)**
 
-## Project Overview
+## What is this?
 
-WebAR Puppy is an immersive augmented reality (AR) web experience that brings a virtual 3D puppy into your real-world environment. Using just a web browser and device camera, users can interact with a friendly 3D puppy model positioned over a target image, rotate it with touch/mouse gestures, and discover additional information through interactive AR panels that appear on either side of the model.
+This is a cool AR (augmented reality) project that shows a 3D puppy on your screen when you point your camera at a picture of a dog. You can spin the puppy with your finger and see info about it.
 
 ![WebAR Puppy Demo](dog.webp)
 
-### Key Highlights
+## Cool things it does:
 
-- No app installation required - runs entirely in the browser
-- Works on most modern smartphones, tablets, and computers with a camera
-- Immersive AR experience with intuitive interactions
-- Informative panels that appear in 3D space alongside the model
-- Image slideshow feature showcasing additional content
+- Works in your web browser - no app to download!
+- You can rotate the puppy by touching it
+- Tap the puppy to see information panels
+- Shows pictures in a slideshow
 
-## ✨ Features
+## How to use it:
 
-- **Browser-Based AR**: Experience augmented reality directly in your web browser without downloading any apps
-- **Image Target Recognition**: Uses the device camera to detect and track a specific target image
-- **Interactive 3D Model**: A detailed puppy model that can be rotated through touch or mouse interaction
-- **Dual AR Information Panels**: Text information panel on the left and image slideshow panel on the right
-- **User-Friendly Scanning UI**: Visual guidance shows users exactly which image to scan
-- **Custom UI Controls**: Slideshow navigation and panel dismissal buttons
-- **Responsive Design**: Optimized for both mobile and desktop experiences
-- **Separation of Concerns**: Clean code organization with separate HTML, CSS, and JavaScript files
+1. Visit the [demo link](https://reliable-melba-93be87.netlify.app/)
+2. Let the website use your camera
+3. Point your camera at the dog picture (shown above)
+4. When the puppy appears:
+   - Swipe to spin it around
+   - Tap on it to see info
+   - Use arrow buttons to see different pictures
+   - Press X to close the panels
 
-## 🛠️ Technology Stack
+## What I used to make it:
 
-- **THREE.js**: Powers the 3D rendering and scene management
-- **MindAR**: Provides the image tracking and AR capabilities
-- **WebGL**: Enables hardware-accelerated graphics in the browser
-- **JavaScript (ES6+)**: Handles all application logic and interactions
-- **HTML5/CSS3**: Structures and styles the user interface elements
-- **ES Modules**: For modern JavaScript module organization
+- THREE.js for 3D stuff
+- MindAR for the augmented reality part
+- HTML, CSS, and JavaScript
 
-## 🚀 Getting Started
+## To run it on your computer:
 
-### Prerequisites
+1. Download all the files
+2. Open a command prompt in the folder
+3. Type: `python -m http.server 8000`
+4. Open a web browser and go to: `http://localhost:8000`
 
-- A modern web browser with WebGL and camera access support:
-  - Chrome (recommended), Firefox, Safari, or Edge
-- A device with a camera (for AR functionality)
-- The target image (`dog.webp` included in the project)
-- A local server to serve the files (Python's built-in server recommended)
+## Files in the project:
 
-### Quick Start
+- `index.html`: The main page
+- `app.js`: All the code that makes it work
+- `app.css`: Makes everything look nice
+- `pup.glb`: The 3D puppy model
+- `dog.webp`: The picture you need to scan
 
-1. Clone or download this repository
-2. Navigate to the project directory
-3. Start a local server:
+## Works on:
 
-```bash
-# Using Python (recommended)
-python -m http.server 8000
+- Most smartphones (iPhone and Android)
+- Tablets
+- Computers with a camera
 
-# Using Node.js and npx
-npx serve
-```
-
-4. Open your browser and visit:
-```
-http://localhost:8000
-```
-
-5. Allow camera access when prompted
-6. Point your camera at the target image (`dog.webp`)
-
-### Using the Application
-
-1. **Scanning**: Hold your device so the camera can see the target image
-2. **Interaction**: Once the puppy appears:
-   - Swipe or drag to rotate the model
-   - Tap/click on the puppy to reveal information panels
-   - Use the arrow buttons to navigate through images
-   - Press the X button to dismiss panels
-
-## 📁 Project Structure
-
-```
-WebAR Puppy/
-├── index.html          # Main HTML structure
-├── app.js              # AR and interaction logic
-├── app.css             # Styling for the application
-├── targets.mind        # MindAR target image data
-├── pup.glb             # 3D puppy model
-├── dog.webp            # Target image for scanning
-├── plugins/            # External plugins
-├── aframe.io/          # A-Frame library files
-└── cdn.jsdelivr.net/   # CDN resources
-```
-
-## ⚙️ Customization
-
-The application offers several customization points:
-
-### Modifying Panel Positions
-In `app.js`, look for these sections:
-```javascript
-// Left panel position (adjust x value)
-leftPanelMesh.position.set(-0.8, 0, 0);
-
-// Right panel position (adjust x value)
-rightPanelMesh.position.set(0.8, 0, 0);
-```
-
-### Changing Slideshow Images
-Update the `slideImageUrls` array in `app.js`:
-```javascript
-const slideImageUrls = [
-  'https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg',
-  'https://images.pexels.com/photos/1805164/pexels-photo-1805164.jpeg',
-  'https://images.pexels.com/photos/39317/chihuahua-dog-puppy-cute-39317.jpeg'
-];
-```
-
-### Model Adjustments
-To modify the 3D model's appearance:
-```javascript
-// Scale
-gltf.scene.scale.set(12, 12, 12);
-
-// Position
-gltf.scene.position.set(0, 0.5, 0);
-
-// Rotation
-gltf.scene.rotation.set(90, 0, 0);
-```
-
-## 📱 Compatibility
-
-- **Mobile**: Android (Chrome, Samsung Internet), iOS (Safari)
-- **Desktop**: Chrome, Firefox, Edge, Safari
-- **Minimum Requirements**: WebGL support, camera access, and adequate processing power
-
-## 💡 Development Tips
-
-- Use Chrome DevTools with mobile device emulation for testing
-- Ensure good lighting when testing AR functionality
-- For optimal tracking, print the target image rather than displaying it on another screen
-- When developing, consider lowering the model complexity to improve performance on lower-end devices
-
-
-
-## 🙏 Acknowledgements
-
-- THREE.js team for their excellent 3D web framework
-- MindAR creators for making web AR accessible
+Thanks for checking out my WebAR Puppy project!
 - All testers who provided feedback during development
