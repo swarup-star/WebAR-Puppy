@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+}
+
+#container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+#control {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;  /* Center the buttons horizontally */
+  align-items: center;      /* Align them vertically */
+  z-index: 1000;
+}
+
+/* Capture Button */
+#screenshot {
+  width: 50px; /* Capture button size */
+  height: 50px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 50%; /* Clip the button as a circle */
+  transition: transform 0.2s ease, opacity 0 ease-out; /* Add smooth click effect */
+  background: transparent; /* Ensure background is transparent */
+  outline: none;  /* Remove outline on focus */
+}
+
+/* Share Button */
+#shareButton {
+  width: 35px;  /* Smaller size for share button */
+  height: 35px;  /* Adjust height if needed */
+  margin-left: 10px; /* Space between buttons */
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 50%; /* Clip the button as a circle */
+  transition: transform 0.2s ease, opacity 0.2s ease; /* Add smooth click effect */
+  background: transparent; /* Ensure background is transparent */
+  outline: none;  /* Remove outline on focus */
+}
+
+/* Make the images fill the buttons */
+button img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Set the size of the buttons based on the image size */
+#screenshot img, #shareButton img {
+  object-fit: cover; /* Ensure the image fills the button's circle */
+  width: 100%;
+  height: 100%;
+}
+
+/* Ensure the buttons stay circular during click or focus */
+#screenshot:focus, #screenshot:active, 
+#shareButton:focus, #shareButton:active {
+  transform: scale(0.95); /* Slightly reduce size to indicate the button was clicked */
+}
